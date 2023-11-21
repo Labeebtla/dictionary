@@ -100,16 +100,16 @@ class homeScreen extends StatelessWidget {
           child: Obx(() => ListView.builder(
               itemCount: dictionaryDataMap.length,
               itemBuilder: (context, index) {
-                final listData = dictionaryDataMap.keys.elementAt(index);
+                final data = dictionaryDataMap.keys.elementAt(index);
                 return GestureDetector(
                   onTap: () {
-                    definitionPage(listData, color);
+                    definitionPage(data, color);
                   },
                   child: Card(
                     margin: const EdgeInsets.all(4),
                     elevation: 1,
                     child: ListTile(
-                      title: Text(listData),
+                      title: Text(data),
                     ),
                   ),
                 );
@@ -191,8 +191,7 @@ class homeScreen extends StatelessWidget {
                       child: Expanded(
                         child: IconButton(
                           onPressed: () {
-                            definitionPage(
-                                dictionaryList.first.englishWord, color);
+                            definitionPage(dictionaryDataMap.keys.first, color);
                           },
                           icon: const Icon(
                             Icons.check_box_outlined,

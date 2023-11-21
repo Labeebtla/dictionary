@@ -17,6 +17,7 @@ void main() async {
   loadCsv();
 
   runApp(const GetMaterialApp(
+    debugShowCheckedModeBanner: false,
     home: EnglishScreen(),
   ));
 }
